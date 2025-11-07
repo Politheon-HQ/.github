@@ -296,7 +296,9 @@ def build_theme_section(theme):
     
     time_badge_url = f"https://img.shields.io/badge/{theme['emoji']}_{theme['badge_label']}-{theme['badge_text']}-{theme['badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
     
-    time_range_badge_url = f"https://img.shields.io/badge/⏰_Time-{theme['time_range']}-{theme['time_badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
+    # Replace dashes with encoded version for badge URL
+    time_range_encoded = theme['time_range'].replace('-', '--')
+    time_range_badge_url = f"https://img.shields.io/badge/⏰_Time-{time_range_encoded}-{theme['time_badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
     
     divider_url = f"https://capsule-render.vercel.app/api?type=rect&color={theme['banner_colors']}&height=3"
     
