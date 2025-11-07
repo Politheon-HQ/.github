@@ -329,7 +329,7 @@ def build_footer(theme):
 
 def update_readme():
     """Update the README.md file with current theme"""
-    readme_path = "README.md"
+    readme_path = "profile/README.md"
     
     # Read current README
     try:

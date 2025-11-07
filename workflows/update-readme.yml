@@ -22,10 +22,11 @@ on:
   # Allow manual trigger
   workflow_dispatch:
   
-  # Run on push to main (for testing)
+  # Run on push to main/master (for testing)
   push:
     branches:
       - main
+      - master
 
 jobs:
   update-readme:
@@ -57,14 +58,14 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet README.md || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet profile/README.md || echo "changed=true" >> $GITHUB_OUTPUT
       
       - name: Commit and push if changed
         if: steps.check_changes.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md
+          git add profile/README.md
           git commit -m "🤖 Auto-update README with current time theme [skip ci]"
           git push
 
