@@ -16,8 +16,8 @@ name: Update Dynamic README
 
 on:
   schedule:
-    # Run every 3 hours to match time slot changes
-    - cron: '0 */3 * * *'
+    # Run every 15 minutes; commit only when content actually changes
+    - cron: '*/15 * * * *'
   
   # Allow manual trigger
   workflow_dispatch:
@@ -54,6 +54,14 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           python scripts/update_readme.py
+      
+      - name: Print selected theme (debug)
+        run: |
+          python - <<'PY'
+          from scripts.update_readme import get_current_theme
+          t = get_current_theme()
+          print(f"Theme: {t['badge_label']} ({t['time_range']})")
+          PY
       
       - name: Check for changes
         id: check_changes
