@@ -294,9 +294,11 @@ def build_theme_section(theme):
     """Build the TIME_THEME section of the README"""
     banner_url = f"https://capsule-render.vercel.app/api?type=waving&color={theme['banner_colors']}&height=240&section=header&text=Politheon&fontSize=90&fontColor={theme['font_color']}&stroke={theme['stroke_color']}&strokeWidth=1&fontAlignY=38&desc={theme['header_desc']}&descSize=26&descAlignY=58&descAlign=50&animation=fadeIn"
     
-    time_badge_url = f"https://img.shields.io/badge/{theme['emoji']}_{theme['badge_label']}-{theme['badge_text']}-{theme['badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
+    # Encode badge label: replace spaces with underscores
+    badge_label_encoded = theme['badge_label'].replace(' ', '_')
+    time_badge_url = f"https://img.shields.io/badge/{theme['emoji']}_{badge_label_encoded}-{theme['badge_text']}-{theme['badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
     
-    # Replace dashes with encoded version for badge URL
+    # Encode time range: replace single dashes with double dashes for shields.io
     time_range_encoded = theme['time_range'].replace('-', '--')
     time_range_badge_url = f"https://img.shields.io/badge/⏰_Time-{time_range_encoded}-{theme['time_badge_color']}?style=for-the-badge&labelColor={theme['badge_label_color']}"
     
