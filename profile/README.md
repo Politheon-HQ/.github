@@ -6,8 +6,8 @@
 
 ![Header Banner](https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:0B1F35,100:191970&height=240&section=header&text=Politheon&fontSize=90&fontColor=D6A649&stroke=D6A649&strokeWidth=1&fontAlignY=38&desc=Deep%20in%20the%20Night%2C%20Signals%20Surface&descSize=26&descAlignY=58&descAlign=50&animation=fadeIn)
 
-![Time Badge](https://img.shields.io/badge/🌌_DEEP WATCH-Silent_Sentinel-191970?style=for-the-badge&labelColor=000000)
-![Current Time](https://img.shields.io/badge/⏰_Time-12am-3am-0B1F35?style=for-the-badge&labelColor=000000)
+![Time Badge](https://img.shields.io/badge/🌌_DEEP_WATCH-Silent_Sentinel-191970?style=for-the-badge&labelColor=000000)
+![Current Time](https://img.shields.io/badge/⏰_Time-12am--3am-0B1F35?style=for-the-badge&labelColor=000000)
 
 <img width="300" src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:0B1F35,100:191970&height=3" />
 
